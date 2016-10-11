@@ -25,10 +25,13 @@
             var host1 = new host();
             tbl.sethost(host1);
             
+            //规定游戏身份
             var v1 = new villager();
             var w = new werewolf();
             var s = new seer();
             var wit = new witch();
+            
+            //添加玩家
             var tricky = new person("tricky");
             var yvonne = new person("yvonne");
             var aspire = new person("aspire");
@@ -38,16 +41,20 @@
             var feng = new person("feng");
             var bobo = new person("bobo");
             
+            //分配玩家身份
+            //tricky aspire 村民  yvonne 预言家  bill 女巫
             tricky.givecard(v1);
             aspire.givecard(v1);
             yvonne.givecard(s);
             bill.givecard(wit);
             
+            //ajerk meu feng bobo 狼人
             ajerk.givecard(w);
             meu.givecard(w);
             feng.givecard(w);
             bobo.givecard(w);
             
+            //玩家上座 分配玩家编号
             tbl.addperson(tricky);
             tbl.addperson(yvonne);
             tbl.addperson(aspire);
