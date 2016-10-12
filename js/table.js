@@ -11,6 +11,21 @@ function table(){
     //桌子上的人数
     this.peoplecount = 0;
     
+    /*
+    该桌子得票数最高者 就算不行也要留着
+    this.maxvote = undefined;
+    this.setMaxvote = function(person){
+        this.maxvote = person;
+        alert(this.maxvote.tablenum);
+    }
+    */
+    
+    //该桌子得票数最高者的号码....
+    this.maxvotenum = 0;
+    this.setMaxvotenum = function(num){
+        this.maxvotenum = num;
+    }
+    
     //添加一个人
     this.addperson = function(person){
         this.persons.push(person);
@@ -25,4 +40,5 @@ function table(){
         this.host = host;
         host.table = this;
     }
+            
 }

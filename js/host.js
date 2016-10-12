@@ -50,7 +50,6 @@ function host(){
         
     }
     
-    
     //统计投票结果
     this.calvote = function(){
         var maxid = 0; //票数最高的id
@@ -68,6 +67,10 @@ function host(){
             person.bevotedcount = 0; //重置为0票,第二天的时候才不会继续用前面的票数进行计数
         }
         addMsg(maxid+"号玩家出局");
+        
+        //设置最大得票者的号码(其实我是想要设置最大得票者的，毕竟是个人，但是在下面的lastwords()方法中调用不了变量tablenum)
+        this.table.setMaxvotenum(this.table.persons[maxid-1].tablenum);
+        
         this.table.persons[maxid-1].alive = false; //出局设置为false
     }
     
@@ -99,6 +102,13 @@ function host(){
             addMsg("游戏继续");
         }
         
+    }
+    
+    this.lastwords = function(num){
+        //var person = person;
+        //addMsg(person.tablenum+"号xxx发表遗言");
+        addMsg(num + "号玩家发表遗言");
+        addMsg(num + "号玩家遗言结束");
     }
     
 }
